@@ -34,7 +34,6 @@ return new class extends Migration
             $table->tinyInteger('vocab_grammar')->nullable();
             $table->text('course_name');
             $table->enum('ticket_type', ['normal', 'special'])->nullable();
-            $table->date('ticket_date');
             $table->dateTime('student_joined_at')->nullable();
             $table->timestamps();
 
