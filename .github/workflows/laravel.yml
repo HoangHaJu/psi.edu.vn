@@ -27,32 +27,28 @@ jobs:
     - name: Configure Composer Audit
       run: composer config audit.block-insecure false
 
-    # 4. Chuẩn bị file môi trường
-    - name: Copy .env
-      run: cp .env.example .env
-
-    # 5. Cài đặt các thư viện từ file composer.lock
+    # 4. Cài đặt các thư viện từ file composer.lock
     # Dùng lệnh 'install' thay vì 'update' để đảm bảo tính nhất quán
     - name: Install Dependencies
       run: |
         composer config audit.block-insecure false
         composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
 
-    # 6. Khởi tạo Application Key
+    # 5. Khởi tạo Application Key
     - name: Generate key
       run: php artisan key:generate
 
-    # 7. Cấp quyền cho thư mục storage và cache
+    # 6. Cấp quyền cho thư mục storage và cache
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
-    # 8. Tạo database giả lập (SQLite) để chạy test
+    # 7. Tạo database giả lập (SQLite) để chạy test
     - name: Create Database
       run: |
         mkdir -p database
         touch database/database.sqlite
 
-    # 9. Chạy Unit Test / Feature Test
+    # 8. Chạy Unit Test / Feature Test
     - name: Execute tests
       env:
         DB_CONNECTION: sqlite
