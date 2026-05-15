@@ -19,8 +19,8 @@ class TempSeeder extends Seeder
             'name' => 'updateStudentLesson',
             'guard_name' => 'admin',
             'module_id' => null,
-            'created_at' => DB::raw('NOW()'),
-            'updated_at' => DB::raw('NOW()')
+            'created_at' => now(),,
+            'updated_at' => now(),
         ]);
     }
 }

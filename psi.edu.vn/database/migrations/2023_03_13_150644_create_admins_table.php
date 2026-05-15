@@ -49,8 +49,8 @@ return new class extends Migration
             'is_active' => '1',
             'avatar' => config('custom.images.avatarUser'),
             'password' => bcrypt('1'),
-            'created_at' => DB::raw('NOW()'),
-            'updated_at' => DB::raw('NOW()')
+            'created_at' => now(),,
+            'updated_at' => now(),
         ]);
 
         DB::table('admins')->insert([
@@ -60,8 +60,8 @@ return new class extends Migration
             'is_active' => '1',
             'avatar' => config('custom.images.avatarUser'),
             'password' => bcrypt('1'),
-            'created_at' => DB::raw('NOW()'),
-            'updated_at' => DB::raw('NOW()')
+            'created_at' => now(),,
+            'updated_at' => now(),
         ]);
 
         DB::table('admins')->insert([
@@ -71,8 +71,8 @@ return new class extends Migration
             'is_active' => '1',
             'avatar' => config('custom.images.avatarUser'),
             'password' => bcrypt('1'),
-            'created_at' => DB::raw('NOW()'),
-            'updated_at' => DB::raw('NOW()')
+            'created_at' => now(),,
+            'updated_at' => now(),
         ]);
     }
 
