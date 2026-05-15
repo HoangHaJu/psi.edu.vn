@@ -1,0 +1,117 @@
+/* Gradient Background */
+.section-fullscreen {
+    font-size: 16px;
+    line-height: 1.5;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc); /* Màu gradient */
+    color: #fff;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Dark Overlay for better text visibility */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+/* Feature Box Styling */
+.feature-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+    height: 100%; /* Ensure the height is consistent */
+}
+
+.feature-box {
+    background: #0062cc;
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130px;
+    max-height: 250px; /* Set a fixed height to prevent distortion */
+    width: 300px;
+    overflow: hidden;
+}
+
+.feature-box img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.feature-box:hover {
+    transform: translateY(-10px);
+    background-color: #ffce00;
+}
+
+.feature-box:hover img {
+    transform: scale(1.1);
+}
+
+/* Active state when clicked */
+.feature-box.active {
+    background-color: #ffce00;
+    color: #0062cc;
+}
+
+.feature-box.active h5 {
+    font-size: 18px;
+}
+
+/* CTA Section */
+.cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-container .btn {
+    padding: 15px 30px;
+    background-color: #ffce00;
+    color: #0062cc;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-container .btn:hover {
+    background-color: #0062cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-box {
+        padding: 20px;
+    }
+
+    .feature-box img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature-box h5 {
+        font-size: 14px;
+    }
+
+    .cta-container .btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}

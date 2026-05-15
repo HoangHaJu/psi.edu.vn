@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trò chơi - Listen and Choose</title>
+  <link rel="stylesheet" href="/Game 1/Unit/Unit2/Unit2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+          <div class="breadcrumb">
+            <a href="/Game 1/Game1.html">Phần 1</a> <span> &gt; Unit 4</span>
+          </div>
+        <h1>TRÒ CHƠI</h1>
+        <p>Giúp bé phát triển tiếng Anh một cách tự nhiên</p>
+      </header>
+<main class="game-content"> 
+  <div class="top-bar">
+        <a href="/index.html"><button class="btn icon home"><img src="/IMG/Group.png" alt="h" class="home-icon"></button></a>
+        <a href="/Game 1/Game1.html">
+          <button class="btn icon number">
+              <img src="/IMG/1.png" alt="1" class="number-icon"/>
+          </button>
+        </a>
+        <a href="/Game 1/Unit/Unit3/Unit3.html"><button class="btn nav"><span class="arrow">&laquo;</span></button></a>
+        <a href="/Game 1/Unit/Unit5/Unit5.html"><button class="btn nav"><span class="arrow">&raquo;</span></button></a>
+    </div>
+    <div class="lesson-box">
+      <div class="lesson-header">
+        <img src="/IMG/Frame 69.png" class="touch-icon">
+        <h2>Unit 4: What do you ride?</h2>
+      </div>
+    <p class="instruction">Listen and order.</p>
+    <audio id="combo-audio" controls>
+      <source src="/Game 1/Unit/Unit4/Sound/sat_level01_game04.ogg" type="audio/mpeg"> 
+    </audio>
+
+    <div class="characters">
+      <div class="character" data-name="bike">
+        <img src="/Game 1/Unit/Unit4/img unit/bike.jpg" alt="bike" />
+      </div>
+      <div class="character" data-name="bus">
+        <img src="/Game 1/Unit/Unit4/img unit/bus.jpg" alt="bus" />
+      </div>
+      <div class="character" data-name="train">
+        <img src="/Game 1/Unit/Unit4/img unit/train.jpg" alt="train" />
+      </div>
+      <div class="character" data-name="car">
+        <img src="/Game 1/Unit/Unit4/img unit/car.jpg" alt="car" />
+      </div>
+    </div>
+    <div class="restart-container">
+        <button id="restart-button">🔁 Chơi lại</button>
+    </div>
+    <div class="check-container">
+  <button id="check-button">✅ Kiểm tra</button>
+    </div>
+    <img src="/IMG/image 60.png" alt="Nhân vật" class="corner-image">
+  </div>
+</main>
+<script>
+const correctOrder = ["car", "bus", "bike", "train"]; // thứ tự đúng
+let userSelections = [];
+
+// Khi audio phát → reset trò chơi
+document.getElementById("combo-audio").addEventListener("play", () => {
+  userSelections = [];
+
+  // Xóa các class và số thứ tự
+  document.querySelectorAll('.character').forEach(item => {
+    item.classList.remove('selected', 'correct', 'wrong');
+  });
+
+  document.querySelectorAll(".order-number").forEach(el => el.remove());
+
+  // Khóa nút kiểm tra
+  document.getElementById("check-button").disabled = true;
+});
+
+// Sự kiện chọn ảnh
+document.querySelectorAll('.character').forEach(item => {
+  item.addEventListener('click', () => {
+    const name = item.dataset.name;
+
+    // Không chọn trùng
+    if (userSelections.includes(name)) return;
+
+    userSelections.push(name);
+    item.classList.add('selected');
+
+    // Thêm số thứ tự chọn
+    const orderNumber = document.createElement('div');
+    orderNumber.className = 'order-number';
+    orderNumber.innerText = userSelections.length;
+    item.appendChild(orderNumber);
+
+    // Khi chọn đủ 4 thì mở nút kiểm tra
+    if (userSelections.length === 4) {
+      document.getElementById("check-button").disabled = false;
+    }
+  });
+});
+
+// Sự kiện bấm nút kiểm tra
+document.getElementById("check-button").addEventListener("click", () => {
+  if (userSelections.length !== 4) return;
+
+  let allCorrect = true;
+
+  userSelections.forEach((selectedName, index) => {
+    const element = document.querySelector(`.character[data-name="${selectedName}"]`);
+    if (correctOrder[index] === selectedName) {
+      element.classList.add("correct");
+    } else {
+      element.classList.add("wrong");
+      allCorrect = false;
+    }
+
+  });
+
+  document.getElementById("check-button").disabled = true;
+
+  if (allCorrect) {
+    document.getElementById("success-popup").classList.remove("hidden");
+  }
+});
+
+
+  // Khóa nút kiểm tra lại
+  document.getElementById("check-button").disabled = true;
+
+
+// Sự kiện nút "Chơi lại"
+document.getElementById("restart-button").addEventListener("click", () => {
+  userSelections = [];
+
+  document.querySelectorAll(".character").forEach(item => {
+    item.classList.remove("selected", "correct", "wrong");
+  });
+
+  // Xóa số thứ tự
+  document.querySelectorAll(".order-number").forEach(el => el.remove());
+
+  document.getElementById("check-button").disabled = true;
+
+  const audio = document.getElementById("combo-audio");
+  audio.pause();
+  audio.currentTime = 0;
+});
+function closePopup() {
+  document.getElementById("success-popup").classList.add("hidden");
+}
+
+</script>
+<div id="success-popup" class="popup hidden">
+  <div class="popup-content">
+    <h2>🎉 Chúc mừng!</h2>
+    <p>Bạn đã làm đúng hết rồi!</p>
+    <button onclick="closePopup()">Đóng</button>
+  </div>
+</div>
+
+</body>
+</html>

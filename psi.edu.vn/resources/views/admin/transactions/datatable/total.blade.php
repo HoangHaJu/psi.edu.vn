@@ -1,0 +1,1 @@
+<span>{{ format_price($total) }}</span>

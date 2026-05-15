@@ -1,0 +1,102 @@
+/* Floating button */
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+    position: fixed;
+    bottom: 30px;
+    z-index: 999;
+    right: 10px;
+}
+
+.fab-container:hover {
+    height: 100%;
+}
+
+.fab-container .sub-button:nth-child(2) {
+    transform: translateY(-60px);
+}
+
+.fab-container .sub-button:nth-child(3) {
+    transform: translateY(-120px);
+}
+
+.fab-container .sub-button:nth-child(4) {
+    transform: translateY(-180px);
+}
+
+.fab-container .sub-button:nth-child(5) {
+    transform: translateY(-240px);
+}
+
+.fab-container .sub-button:nth-child(6) {
+    transform: translateY(-300px);
+}
+
+.fab-container .fab {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background-color: #1EA38F;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+.fab-container .fab .fab-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.fab-container .sub-button {
+    position: absolute;
+    display: flex;
+    right: 0px;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    background-color: #1d2e61;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.fab-container .sub-button:hover {
+    background-color: #0a1c53 !important;
+    color: #fff;
+}
+
+.fab-container .sub-button:hover {
+    cursor: pointer;
+}
+
+.fab-container .sub-button .material-icons {
+    color: white;
+    padding-top: 6px;
+}
+
+/* End Floating button */
+
+.floating-animated-icon {
+    display: inline-block;
+    animation: shake 1s ease, bounce 1.5s infinite 0.5s ease;
+}
+
+/* Keyframes cho hiệu ứng nhảy */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}

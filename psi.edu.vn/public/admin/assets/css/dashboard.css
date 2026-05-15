@@ -1,0 +1,197 @@
+.time-calendar-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f5f9fc;
+    text-align: center;
+}
+
+.current-time {
+    margin-bottom: 20px;
+}
+
+.current-time .date {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a7f9f;
+}
+
+.current-time .time {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.current-time .timezone {
+    font-size: 16px;
+    color: #666;
+}
+
+.calendar {
+    margin-top: 10px;
+}
+
+/* Tổng thể giao diện Datepicker */
+.ui-datepicker {
+    width: 100%;
+    background-color: #eaf7fa;
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header của Datepicker (bao gồm tiêu đề và nút điều hướng) */
+.ui-datepicker-header {
+    background-color: #b8e4e4;
+    color: #1a7f9f;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Tiêu đề tháng và năm */
+.ui-datepicker-title {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* Bảng lịch */
+.ui-datepicker table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+/* Header của bảng lịch (Chủ nhật, Thứ Hai, ...) */
+.ui-datepicker th {
+    color: #555;
+    font-weight: bold;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Các ô ngày trong bảng lịch */
+.ui-datepicker td {
+    font-weight: bold;
+    padding: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+.ui-datepicker-calendar a {
+    color: #000;
+}
+
+/* Ngày hiện tại */
+.ui-datepicker-today {
+    background-color: #4DBABA;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.ui-datepicker-current-day a {
+    color: #fff !important;
+}
+
+/* Bảng lịch tổng thể */
+.ui-datepicker-calendar {
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.ui-datepicker-prev:hover,
+.ui-datepicker-next:hover {
+    text-decoration: none;
+}
+
+/* Tuần (Chủ nhật, Thứ Hai, ...) */
+.ui-datepicker-calendar th {
+    padding: 10px;
+    background-color: #eaf7fa;
+}
+
+/* Style for card-like appearance */
+.border {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Styling for lessons and notifications */
+h3 {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styling for list items */
+.list-group-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+/* Badge for course status */
+.badge {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+/* Styling for notification timestamps */
+.text-muted {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Add hover effect on notifications */
+.list-group-item:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+/* Adjust column width on smaller screens */
+@media (max-width: 767px) {
+
+    .col-md-3,
+    .col-md-6 {
+        margin-bottom: 20px;
+    }
+}
+
+.fc-button.fc-button-primary,
+.btn-app {
+    background-color: #1d2e61 !important;
+    color: #fff;
+}
+
+.fc-button.fc-button-primary:hover,
+.btn-app:hover {
+    background-color: #284086 !important;
+    color: #fff;
+}
+
+.fc-button.fc-button-primary.fc-button-active {
+    background-color: #0a1c53 !important;
+    color: #fff;
+}
+
+.fc-button.fc-button-primary:focus,
+.fc-button.fc-button-primary:focus-visible {
+    outline: none;
+    box-shadow: none !important;
+}

@@ -1,0 +1,33 @@
+@extends('admin.layouts.master')
+
+@section('content')
+    <div class="page-body">
+        <div class="container-xl">
+            <div class="card">
+                <div class="card-header justify-content-between">
+                    <h2 class="mb-0">{{ __('Danh sách đánh giá') }}</h2>
+                    <a href="{{ route('admin.review.export') }}" class="btn btn-dark col-md-1 bold-text">Xuất excel</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive position-relative">
+                        <x-admin.partials.toggle-column-datatable />
+                        {{ $dataTable->table(['class' => 'table table-bordered', 'style' => 'min-width: 900px;'], true) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@push('libs-js')
+    <!-- button in datatable -->
+    <script src="{{ asset('/public/vendor/datatables/buttons.server-side.js') }}"></script>
+@endpush
+
+@push('custom-js')
+    {{ $dataTable->scripts() }}
+
+    @include('admin.scripts.datatable-toggle-columns', [
+        'id_table' => $dataTable->getTableAttribute('id'),
+    ])
+@endpush

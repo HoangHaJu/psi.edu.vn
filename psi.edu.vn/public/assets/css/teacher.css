@@ -1,0 +1,134 @@
+/* ==== Time Slot Grid ==== */
+.time-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.time-slot {
+    flex: 1 0 22%;
+    min-width: 70px;
+    max-width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #0d6efd;
+    background-color: #fff;
+    border: 2px solid #0d6efd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+    background-color: #0d6efd;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* ==== Teacher Header ==== */
+.teacher-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.teacher-header img.flag {
+    width: 50px;
+    height: auto;
+}
+
+.teacher-header h5 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* ==== Volume Icon ==== */
+.volume-icon {
+    font-size: 1.5rem;
+    color: #0d6efd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.volume-icon:hover {
+    transform: scale(1.2);
+}
+
+/* ==== Audio Element Hidden ==== */
+audio {
+    display: none;
+}
+
+/* ==== Carousel Customizations ==== */
+#teacherCarousel {
+    position: relative;
+    padding-bottom: 4rem; /* space for indicators */
+}
+
+.carousel-item {
+    min-height: 400px;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* ==== Carousel Controls ==== */
+#teacherCarousel .carousel-control-prev,
+#teacherCarousel .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    /* background-color: #0d6efd; */
+    background: conic-gradient(from 258.5deg at 48.25% 100%, #247bff 0deg, #b7d9ff 146.32deg, #247bff 360deg);
+    border-radius: 50%;
+    opacity: 0.9;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#teacherCarousel .carousel-control-prev:hover,
+#teacherCarousel .carousel-control-next:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.5);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    cursor: pointer;
+}
+
+/* ==== Carousel Indicators ==== */
+.carousel-indicators {
+    z-index: 3;
+}
+
+.carousel-indicators.custom-dots button {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 50%;
+    background-color: #aaa;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators.custom-dots button.active {
+    background-color: #007bff;
+    opacity: 1;
+}
+
+/* ==== Responsive Carousel Controls ==== */
+@media (max-width: 768px) {
+    #teacherCarousel .carousel-control-prev,
+    #teacherCarousel .carousel-control-next {
+        width: 36px;
+        height: 36px;
+    }
+}

@@ -1,0 +1,504 @@
+:root {
+    /* Primary Colors */
+    --primary-dark: #031448;
+    --background-light: rgba(237, 246, 255, 1);
+    --alice-blue: aliceblue;
+
+    /* Driftwood Color Palette */
+    --color-Driftwood-50: #f8f6ee;
+    --color-Driftwood-100: #eee8d3;
+    --color-Driftwood-200: #dfd1a9;
+    --color-Driftwood-300: #cdb277;
+    --color-Driftwood-400: #bd9852;
+    --color-Driftwood-500: #a47d40;
+    --color-Driftwood-600: #956a39;
+    --color-Driftwood-700: #785030;
+    --color-Driftwood-800: #65432e;
+    --color-Driftwood-900: #58392b;
+    --color-Driftwood-950: #321e16;
+
+    /* Bunting Color Palette */
+    --color-Bunting-50: #edf6ff;
+    --color-Bunting-100: #d7e9ff;
+    --color-Bunting-200: #b7d9ff;
+    --color-Bunting-300: #86c3ff;
+    --color-Bunting-400: #4da2ff;
+    --color-Bunting-500: #247bff;
+    --color-Bunting-600: #0d58ff;
+    --color-Bunting-700: #0641ef;
+    --color-Bunting-800: #0c36c1;
+    --color-Bunting-900: #113397;
+    --color-Bunting-950: #0d1b4c;
+
+    /* Accent Colors */
+    --accent-color: #a5803f;
+    --accent-hover: #8b6b33;
+
+    /* Text Colors */
+    --text-light: white;
+    --text-dark: rgba(33, 37, 41, 1);
+
+    /* Border & Separator Colors */
+    --border-accent: #a5803f;
+    --border-highlight: #0d6efd;
+
+    /* Bootstrap-like Colors (if applicable) */
+    --blue-bootstrap: #0d6efd;
+
+    /* Font Families */
+    --font-family-inter: "Inter", sans-serif;
+
+    /* Spacing & Sizing (Optional, but good practice) */
+    --font-sm: 0.875rem;
+    --font-general: 1rem;
+    --font-xl: 1.25rem;
+
+    --h1-min-font: 1.75rem;
+    --h1-preferred-font: 2vw + 0.75rem;
+    --h1-max-font: 2.5rem;
+
+    --h2-min-font: 1.25rem;
+    --h2-preferred-font: 1.25vw + 0.5rem;
+    --h2-max-font: 1.5rem;
+
+    --h3-min-font: 1.125rem;
+    --h3-preferred-font: 1vw + 0.5rem;
+    --h3-max-font: 1.25rem;
+
+    --h4-min-font: 1rem;
+    --h4-preferred-font: 0.9vw + 0.4rem;
+    --h4-max-font: 1.125rem;
+
+    --h5-min-font: 0.875rem;
+    --h5-preferred-font: 0.8vw + 0.4rem;
+    --h5-max-font: 1rem;
+    /* Responsive Font Sizing Variables */
+    --register-number-min-font: 4.5rem;
+    --register-number-preferred-font: 4vw + 1rem;
+    --register-number-max-font: 6.25rem;
+
+    --text-step-register-min-font: 1.5rem;
+    --text-step-register-preferred-font: 1.5vw + 0.75rem;
+    --text-step-register-max-font: 2rem;
+
+    --section-title-h2-min-font: 1.25rem;
+    --section-title-h2-preferred-font: 1.25vw + 0.5rem;
+    --section-title-h2-max-font: 1.5rem;
+
+    --text-section-register-min-font: 1.125rem;
+    --text-section-register-preferred-font: 1vw + 0.75rem;
+    --text-section-register-max-font: 1.75rem;
+
+    --highlight-callout-min-font: 1.125rem;
+    --highlight-callout-preferred-font: 1.2vw + 0.5rem;
+    --highlight-callout-max-font: 1.5rem;
+
+    --cert-title-min-font: 1rem;
+    --cert-title-preferred-font: 2vw + 0.5rem;
+    --cert-title-max-font: 1.75rem;
+
+    --price-font-min: 1.125rem;
+    --price-font-preferred: 2vw + 0.5rem;
+    --price-font-max: 1.5rem;
+
+    --tesol-ribbon-min-font: 1.5rem;
+    --tesol-ribbon-preferred-font: 3vw + 0.5rem;
+    --tesol-ribbon-max-font: 2.5rem;
+
+    --detail-list-min-font: 0.9rem;
+    --detail-list-preferred-font: 1.5vw + 0.3rem;
+    --detail-list-max-font: 1.25rem;
+
+    /* New Responsive Font Sizing Variables for Course Cards */
+    --card-title-min-font: 1.125rem; /* 18px */
+    --card-title-preferred-font: 2vw + 0.5rem;
+    --card-title-max-font: 1.5rem; /* 24px */
+
+    --card-list-min-font: 0.8rem; /* 12.8px (slightly smaller than small) */
+    --card-list-preferred-font: 1.2vw + 0.2rem;
+    --card-list-max-font: 0.9rem; /* 14.4px (original small is 0.875rem ~ 14px) */
+
+    --card-price-old-min-font: 0.8rem;
+    --card-price-old-preferred-font: 1.5vw + 0.3rem;
+    --card-price-old-max-font: 1rem; /* Original 1rem */
+
+    --card-price-new-min-font: 1rem;
+    --card-price-new-preferred-font: 2.2vw + 0.5rem;
+    --card-price-new-max-font: 1.3rem; /* Slightly larger than 1.25rem (fs-5) */
+
+    --line-height-general: 24px;
+    --line-height-xl: 30px;
+    --bg-gradient: linear-gradient(to right, #ffffff 32.72%, #d7e9ff 79.43%);
+
+    --font-weight-general: 400;
+    --font-weight-sm: 300;
+    --font-weight-step-register: 700;
+
+    --padding-section: 60px 0;
+    --border-radius-sm: 5px;
+    --border-radius-md: 0.5rem;
+    --gap-md: 1rem;
+    --margin-bottom-lg: 2rem;
+    --height-line: 2px;
+    --max-width-line: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: var(--font-family-inter);
+    font-size: 16px;
+    background-color: #f8f9fa;
+    color: var(--text-dark);
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--font-family-inter);
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: clamp(var(--h1-min-font), var(--h1-preferred-font), var(--h1-max-font));
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(var(--h2-min-font), var(--h2-preferred-font), var(--h2-max-font));
+    font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(var(--h3-min-font), var(--h3-preferred-font), var(--h3-max-font));
+    font-weight: 600;
+}
+
+h4 {
+    font-size: clamp(var(--h4-min-font), var(--h4-preferred-font), var(--h4-max-font));
+    font-weight: 500;
+}
+
+h5 {
+    font-size: clamp(var(--h5-min-font), var(--h5-preferred-font), var(--h5-max-font));
+    font-weight: 500;
+}
+.btn-authen {
+    font-size: var(--font-sm);
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-Bunting-700);
+    color: var(--text-light);
+    border: 1px solid var(--color-Bunting-700);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.dropdown-toggle:after {
+    vertical-align: 0px !important;
+    margin-left: 0px;
+}
+.btn-authen:hover {
+    background-color: var(--color-Bunting-900);
+    transform: translateY(-2px);
+}
+
+.btn-out-line-authen {
+    font-size: var(--font-sm);
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--border-radius-md);
+    background-color: transparent;
+    border: 1px solid var(--color-Bunting-700);
+    color: var(--color-Bunting-700);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-out-line-authen:hover {
+    background-color: var(--color-Bunting-700);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+#home {
+    padding-top: 120px; /* Thay thế 120px bằng chiều cao thực tế của header fixed-top của bạn */
+}
+
+#home .video-container {
+    /* Giả sử bạn thêm div này */
+    padding-top: 120px; /* Áp dụng cho div container nếu #home có các thuộc tính khác ảnh hưởng */
+}
+strong {
+    color: var(--text-dark);
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.bg-gradient-web {
+    background-image: var(--bg-gradient);
+}
+
+.bg-primary-dark {
+    background-color: #031448;
+}
+
+.bg-primary {
+    background-color: var(--color-Bunting-50) !important;
+}
+
+.text-accent {
+    color: #a5803f;
+}
+
+.btn-accent {
+    background-color: #a5803f;
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: #8b6b33;
+}
+
+.text-about-us {
+    font-size: var(--font-xl);
+    font-weight: var(--font-weight-sm);
+    line-height: var(--line-height-xl);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+}
+
+.icon-tooltip {
+    cursor: pointer;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-Bunting-800);
+    max-width: 500px;
+}
+
+.section-title h2 {
+    margin: 0;
+    padding: 0.25rem 1rem;
+    border: 2px solid var(--color-Bunting-900);
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: clamp(
+        var(--section-title-h2-min-font),
+        var(--section-title-h2-preferred-font),
+        var(--section-title-h2-max-font)
+    );
+    color: var(--text-light);
+    background-color: var(--color-Bunting-800);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale-border {
+    transition: transform 0.3s ease;
+    border-left: 5px solid var(--color-Bunting-800);
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.text-general {
+    font-size: var(--font-general);
+    font-weight: var(--font-weight-general);
+    line-height: var(--line-height-general);
+    color: var(--text-dark);
+    text-align: start;
+}
+
+.text-section-register {
+    font-size: clamp(
+        var(--text-section-register-min-font),
+        var(--text-section-register-preferred-font),
+        var(--text-section-register-max-font)
+    );
+    font-weight: var(--font-weight-general);
+    line-height: 2.25rem;
+    padding-top: var(--font-xl);
+    letter-spacing: 0;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: start;
+}
+
+.counter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.highlight-callout {
+    background-color: var(--color-Bunting-50);
+    border-left: 5px solid var(--color-Bunting-800);
+    padding: 1.5rem;
+    font-size: clamp(
+        var(--highlight-callout-min-font),
+        var(--highlight-callout-preferred-font),
+        var(--highlight-callout-max-font)
+    );
+    font-weight: 500;
+    color: var(--color-Bunting-800);
+    border-radius: 0.5rem;
+}
+
+.register-number {
+    font-size: clamp(
+        var(--register-number-min-font),
+        var(--register-number-preferred-font),
+        var(--register-number-max-font)
+    );
+    font-weight: bold;
+    background: linear-gradient(to bottom, #74b9f9, #d7e9ff);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    display: inline-block;
+    line-height: 1;
+}
+
+.text-step-register {
+    font-size: clamp(
+        var(--text-step-register-min-font),
+        var(--text-step-register-preferred-font),
+        var(--text-step-register-max-font)
+    );
+    font-weight: var(--font-weight-step-register);
+}
+
+.modal-header .modal-title {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.bi-star-fill,
+.bi-star {
+    transition: transform 0.2s;
+}
+.bi-star-fill:hover,
+.bi-star:hover {
+    transform: scale(1.2);
+}
+
+/* New clamp classes for pricing/detail sections */
+.clamp-cert-title {
+    font-size: clamp(var(--cert-title-min-font), var(--cert-title-preferred-font), var(--cert-title-max-font));
+}
+
+.clamp-price-text {
+    font-size: clamp(var(--price-font-min), var(--price-font-preferred), var(--price-font-max));
+}
+
+.clamp-tesol-ribbon {
+    font-size: clamp(var(--tesol-ribbon-min-font), var(--tesol-ribbon-preferred-font), var(--tesol-ribbon-max-font));
+}
+
+.clamp-detail-list {
+    font-size: clamp(var(--detail-list-min-font), var(--detail-list-preferred-font), var(--detail-list-max-font));
+}
+
+/* Responsive adjustment for 50% OFF sticker */
+.tesol-sticker {
+    width: 60px;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .tesol-sticker {
+        width: 90px;
+    }
+}
+
+/* New clamp classes for Course Cards */
+.clamp-card-title {
+    font-size: clamp(var(--card-title-min-font), var(--card-title-preferred-font), var(--card-title-max-font));
+}
+
+.clamp-card-list {
+    font-size: clamp(var(--card-list-min-font), var(--card-list-preferred-font), var(--card-list-max-font));
+}
+
+.clamp-card-price-old {
+    font-size: clamp(
+        var(--card-price-old-min-font),
+        var(--card-price-old-preferred-font),
+        var(--card-price-old-max-font)
+    );
+}
+
+.clamp-card-price-new {
+    font-size: clamp(
+        var(--card-price-new-min-font),
+        var(--card-price-new-preferred-font),
+        var(--card-price-new-max-font)
+    );
+}
+.custom-register-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.custom-register-button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 149, 255, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(255, 102, 0, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+    }
+}
+.responsive-iframe-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

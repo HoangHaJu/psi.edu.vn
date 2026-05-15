@@ -1,0 +1,103 @@
+:root {
+    --primary-color: #0d6efd; /* Màu xanh dương của Bootstrap primary */
+    --color-Bunting-400: #4da2ff;
+    --secondary-color: #6c757d; /* Màu xám của Bootstrap secondary */
+    --light-bg: #f8f9fa; /* Màu nền nhẹ */
+    --dark-text: #212529; /* Màu chữ tối */
+}
+
+footer {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    font-family: "Inter", sans-serif; /* Đảm bảo font Inter được tải */
+}
+
+footer h5 {
+    color: var(--primary-color); /* Tiêu đề footer màu xanh */
+    font-size: 1.15rem; /* Kích thước tiêu đề */
+    margin-bottom: 1.5rem; /* Khoảng cách dưới tiêu đề */
+}
+
+footer ul {
+    padding-left: 0; /* Bỏ padding mặc định của ul */
+}
+
+footer ul li {
+    margin-bottom: 0.75rem; /* Khoảng cách giữa các mục list */
+}
+
+footer ul li a {
+    color: var(--secondary-color); /* Màu chữ cho các liên kết */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: var(--primary-color); /* Màu chữ khi hover */
+}
+
+.footer-logo-img {
+    max-width: 180px; /* Tăng kích thước logo một chút để dễ nhìn hơn */
+    height: auto;
+}
+
+.footer-info ul li i {
+    color: var(--primary-color); /* Màu icon địa chỉ, hotline, email */
+    width: 20px; /* Đảm bảo icon căn chỉnh */
+    text-align: center;
+}
+
+.social-icons .social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Kích thước icon */
+    height: 40px;
+    border-radius: 50%;
+    background-color: white; /* Màu nền icon */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Thêm transition cho box-shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+}
+
+.social-icons .social-icon-link:hover {
+    background-color: darken(var(--primary-color), 40%); /* Đậm hơn khi hover */
+    transform: translateY(-3px); /* Hiệu ứng nhấc nhẹ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Đổ bóng đậm hơn khi hover */
+}
+
+.social-icons .social-icon {
+    width: 24px; /* Kích thước hình ảnh bên trong icon */
+    height: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .footer-info {
+        text-align: center; /* Căn giữa thông tin công ty trên mobile */
+    }
+
+    .footer-info .footer-logo-img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-info ul {
+        text-align: left; /* Giữ căn trái cho danh sách thông tin */
+        display: inline-block; /* Để căn giữa khối ul */
+    }
+
+    .social-icons {
+        justify-content: center !important; /* Căn giữa các icon mạng xã hội trên mobile */
+    }
+
+    .col-md-6.footer-section {
+        margin-bottom: 2rem; /* Khoảng cách dưới cột đầu tiên trên mobile */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Điều chỉnh cho tablet nếu cần */
+    .col-md-12 .social-icons {
+        justify-content: flex-start !important; /* Căn trái trên tablet */
+    }
+}

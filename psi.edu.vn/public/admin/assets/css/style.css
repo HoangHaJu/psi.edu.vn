@@ -1,0 +1,565 @@
+* {
+    font-family: "Poppins", sans-serif !important;
+}
+.product-name {
+    word-break: break-word;
+    /* Ngắt từ khi cần thiết */
+    overflow-wrap: break-word;
+    /* Hỗ trợ ngắt từ cho trình duyệt khác */
+    white-space: normal;
+    /* Cho phép xuống dòng */
+    display: block;
+    /* Đảm bảo chiếm 100% chiều ngang */
+}
+
+.modulePermissionsList {
+    margin-top: 15px;
+}
+
+.mevivuModuleBox {
+    background: #f2ecec;
+    border-radius: 15px;
+    margin-bottom: 23px;
+    padding: 20px;
+    box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.11);
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.11);
+}
+
+.givePermissionsLabel {
+    font-weight: bold;
+    color: red;
+}
+
+#checkAllPermissionsDiv {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.adminRoleBox {
+    background: #e5dfdf;
+    border-radius: 8px;
+    margin-bottom: 11px;
+    padding: 7px;
+}
+
+.iconModuleMevivu {
+    font-size: 52px;
+}
+
+.control-label {
+    margin-bottom: 8px;
+}
+
+form {
+    position: relative;
+}
+
+img {
+    cursor: pointer;
+}
+
+.border-start-4 {
+    border-left: 4px var(--tblr-border-style) rgba(97, 104, 118, 0.16);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.cursor-move {
+    cursor: move;
+}
+
+/* datatable */
+
+table.dataTable > thead .sorting:before,
+table.dataTable > thead .sorting_asc:before,
+table.dataTable > thead .sorting_desc:before,
+table.dataTable > thead .sorting_asc_disabled:before,
+table.dataTable > thead .sorting_desc_disabled:before {
+    content: "\f30c";
+    font-family: "Font Awesome 5 free";
+}
+
+table.dataTable > thead .sorting:after,
+table.dataTable > thead .sorting_asc:after,
+table.dataTable > thead .sorting_desc:after,
+table.dataTable > thead .sorting_asc_disabled:after,
+table.dataTable > thead .sorting_desc_disabled:after {
+    content: "\f309";
+    font-family: "Font Awesome 5 free";
+}
+
+.dt-buttons {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dt-buttons button.btn {
+    width: fit-content;
+    flex: unset;
+}
+
+.dataTables_length {
+    float: left;
+}
+
+div.dataTables_wrapper div.dataTables_processing {
+    z-index: 9;
+}
+
+.dataTables_filter {
+    opacity: 0;
+}
+
+/* select2 */
+.select-action-multiple,
+.toggle-columns-table {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    z-index: 5;
+}
+
+table.dataTable > thead > tr:last-child > th:not(.sorting_disabled) {
+    padding-right: 0.75rem;
+}
+
+.search-advanced .select2-selection__placeholder {
+    font-weight: normal;
+}
+
+.search-advanced .select2-container .select2-selection--single .select2-selection__rendered {
+    font-weight: normal;
+}
+
+.search-advanced ~ input {
+    float: left;
+    width: 90%;
+}
+
+.search-advanced ~ i {
+    float: right;
+    line-height: 2.4em;
+}
+
+.search-advanced .select2-container--bootstrap4 {
+    width: 90% !important;
+    margin-bottom: 0.5em;
+}
+
+span.select2-selection.select2-selection--single {
+    height: fit-content;
+    padding: 5px;
+}
+
+/* product */
+
+.form-check {
+    margin-left: var(--cat-depth);
+}
+
+.wrap-list-checkbox {
+    min-height: 150px;
+    max-height: 220px;
+    overflow-y: scroll;
+}
+
+.wrap-list-checkbox::-webkit-scrollbar {
+    display: none;
+}
+
+.product-data .nav li.nav-item:not(:last-child) button.nav-link {
+    border-bottom: 1px var(--tblr-border-style) rgba(97, 104, 118, 0.16);
+}
+
+.product-data .wrap-nav {
+    min-height: 300px;
+}
+
+.wrap-attribute .wrap-item-attribute:not(:first-child) {
+    border-top: 1px var(--tblr-border-style) rgba(97, 104, 118, 0.16);
+}
+
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 1em;
+    height: 53px;
+}
+
+.drop-toggle-columns::-webkit-scrollbar {
+    width: 0;
+}
+
+.wrap-table-scroll {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+#blockSubmitFixed {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navbar */
+
+.navbar-vertical {
+    background: #1d2e62;
+    color: #fff;
+    transition: width 0.3s ease;
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/* Collapse sidebar on smaller screens */
+.navbar-collapse.collapse {
+    transition: all 0.3s ease;
+    animation: collapseExpand 0.3s ease-in-out;
+}
+
+@keyframes collapseExpand {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Nav items */
+.navbar-nav .nav-item {
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+}
+
+/* Nav link icon */
+.nav-link-icon {
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-size: 1.4em;
+    color: #fff;
+    /* Blue-purple color for icons */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Nav link title */
+.nav-link-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Hover effects */
+.navbar-nav .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-nav .nav-item:hover .nav-link-title,
+.navbar-nav .nav-item:hover .nav-link-icon {
+    color: #cbd5e1;
+}
+
+.dropdown-menu {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    animation: fadeIn 0.3s ease;
+    transform-origin: top center;
+}
+
+/* Submenu items */
+.dropdown-item {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #c4b5fd;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* End Navbar */
+
+/* Toggle Sidebar */
+
+.sidebar-toggle-btn {
+    position: fixed;
+    /* Giữ nút cố định khi cuộn */
+    top: 50%;
+    /* Đặt ở giữa chiều cao màn hình */
+    transform: translateY(-800%) rotate(-90deg);
+    /* Căn giữa */
+    left: 13.6rem;
+    /* Lòi ra ngoài sidebar */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2937d5;
+    /* Màu nền nút */
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    /* Đảm bảo nút ở trên sidebar */
+    transition: all 0.3s;
+}
+
+.sidebar-toggle-btn:hover {
+    background-color: #495057;
+    /* Thay đổi màu khi hover */
+}
+
+.sidebar-toggle-btn .arrow-icon {
+    font-size: 16px;
+    /* Kích thước biểu tượng */
+    transition: transform 0.3s;
+}
+
+.sidebar-collapsed .sidebar-toggle-btn .arrow-icon {
+    transform: rotate(180deg);
+    /* Quay mũi tên khi sidebar đóng */
+}
+
+.sidebar-collapsed {
+    width: 0 !important;
+    /* Thu gọn sidebar */
+    overflow: hidden;
+    /* Ẩn nội dung bên trong khi thu gọn */
+}
+
+.sidebar-collapsed .navbar-collapse {
+    display: none;
+    /* Ẩn menu khi sidebar thu nhỏ */
+}
+
+.arrow-icon {
+    transition: transform 0.3s ease;
+    /* Hiệu ứng mượt khi xoay */
+}
+
+.arrow-left {
+    transform: rotate(60deg);
+    /* Xoay qua trái */
+}
+
+.arrow-right {
+    transform: rotate(-120deg);
+    /* Xoay qua phải */
+}
+
+/* End Toggle Sidebar */
+
+.bg-topbar {
+    background-color: #f6f9f2;
+}
+
+.navbar-vertical.navbar-expand-lg .navbar-collapse .dropdown-menu .dropdown-item.active,
+.navbar-vertical.navbar-expand-lg .navbar-collapse .nav-link.active {
+    background: #f6f9f2 !important;
+}
+
+.navbar-vertical.navbar-expand-lg .navbar-collapse .dropdown-menu .dropdown-item.active .nav-link-title,
+.navbar-vertical.navbar-expand-lg .navbar-collapse .dropdown-menu .dropdown-item.active .nav-link-icon,
+.navbar-vertical.navbar-expand-lg .navbar-collapse .nav-link.active .nav-link-title,
+.navbar-vertical.navbar-expand-lg .navbar-collapse .nav-link.active .nav-link-icon {
+    color: #383838 !important;
+}
+
+label {
+    color: #1d2e62;
+    font-weight: 500;
+}
+
+.default-color {
+    color: #1d2e62;
+}
+
+.default-color-2 {
+    color: #2c6161;
+}
+
+.divider-100 {
+    height: 3px !important;
+    width: 100%;
+    background-color: #1d2e62;
+}
+
+.btn-primary {
+    background-color: #284086 !important;
+    color: #fff !important;
+}
+
+/* Ensure the image size is applied correctly */
+.navbar-brand-image {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand-image {
+        height: 80px !important;
+        width: 80px !important;
+    }
+}
+
+.default-color {
+    color: #316565 !important;
+}
+
+.default-bg {
+    background-color: #f6f9f2;
+}
+
+.img-circle {
+    width: 100px;
+    /* Đặt kích thước ảnh, có thể thay đổi tùy ý */
+    height: 100px;
+    /* Đặt chiều cao ảnh */
+    border-radius: 50%;
+    /* Để ảnh có hình tròn */
+    object-fit: cover;
+    /* Đảm bảo ảnh được căn chỉnh đúng tỉ lệ */
+    border: 2px solid #ddd;
+    /* Thêm viền cho ảnh, có thể tùy chỉnh */
+}
+
+.img-rounded {
+    width: 120px;
+    /* Đặt kích thước ảnh, có thể thay đổi tùy ý */
+    height: 120px;
+    /* Đặt chiều cao ảnh */
+    border-radius: 5%;
+    /* Để ảnh có hình tròn */
+    object-fit: cover;
+    /* Đảm bảo ảnh được căn chỉnh đúng tỉ lệ */
+    border: 2px solid #ddd;
+    /* Thêm viền cho ảnh, có thể tùy chỉnh */
+}
+
+.btn-default {
+    background-color: #f6f9f2;
+    color: #418a8a;
+}
+
+.pagination {
+    display: flex;
+    margin-bottom: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-btn {
+    border: 1px solid #ccc;
+    border-radius: 50% 50%;
+    padding: 5px 12px;
+    margin: 0 5px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.pagination-btn:hover {
+    background-color: #1c5639;
+    color: #fff;
+}
+
+.pagination-btn.active {
+    background-color: #1c5639;
+    color: #fff;
+}
+
+.pagination-btn.prev,
+.pagination-btn.next {
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+.pagination-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px; /* Optional: Add some margin for spacing */
+}
+.admin-name {
+    font-size: 1.5em; /* Adjust the size as needed */
+    text-transform: capitalize;
+}
+
+.admin-role {
+    text-transform: capitalize;
+}
+
+#resultQuickViewRequest .modal {
+    --tblr-modal-width: unset !important;
+    --tblr-he-width: unset !important;
+}
+
+#resultQuickViewRequest .modal {
+    width: 100% !important;
+}
+
+#resultQuickViewRequest .modal-content {
+    width: 1000px !important;
+}
+
+#registerModal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#registerModal .modal-body {
+    flex: none !important;
+    min-height: 200px;
+}
+
+.course-card {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: #f6f9f2;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.course-radio:checked + .course-label {
+    background-color: #f6f9f2;
+    color: #fff;
+    padding: 10px;
+    border-radius: 15px;
+}

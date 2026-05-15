@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trò chơi - Listen and Choose</title>
+  <link rel="stylesheet" href="/Game 3/Unit/Unit2/Unit2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+          <div class="breadcrumb">
+            <a href="/Game 3/Game3.html">Phần 3</a> <span> &gt; Unit 8</span>
+          </div>
+        <h1>TRÒ CHƠI</h1>
+        <p>Giúp bé phát triển tiếng Anh một cách tự nhiên</p>
+      </header>
+<main class="game-content"> 
+  <div class="top-bar">
+        <a href="/index.html"><button class="btn icon home"><img src="/IMG/Group.png" alt="h" class="home-icon"></button></a>
+        <a href="/Game 3/Game3.html">
+          <button class="btn icon number">
+              <img src="/IMG/Frame 86.png" alt="3" class="number-icon"/>
+          </button>
+        </a>
+        <a href="/Game 3/Unit/Unit7/Unit7.html"><button class="btn nav"><span class="arrow">&laquo;</span></button></a>
+        <a href="/Game 3/Unit/Unit9/Unit9.html"><button class="btn nav"><span class="arrow">&raquo;</span></button></a>
+    </div>
+    <div class="lesson-box">
+      <div class="lesson-header">
+        <img src="/IMG/Frame 69.png" class="touch-icon">
+        <h2>Unit 8: How do we make music?</h2>
+      </div>
+    <p class="instruction">Listen and match.</p>
+    <div class="audio-buttons">
+        <button class="audio" data-answer="guitar" data-sound="/Game 3/Unit/Unit8/Sound/guitar.mp3">
+          <img src="/IMG/speaker.svg" alt="Loa" class="icon-loa">
+        </button>
+        <button class="audio" data-answer="piano" data-sound="/Game 3/Unit/Unit8/Sound/piano.mp3">
+          <img src="/IMG/speaker.svg" alt="Loa" class="icon-loa">
+        </button>
+        <button class="audio" data-answer="drums" data-sound="/Game 3/Unit/Unit8/Sound/drums.mp3">
+          <img src="/IMG/speaker.svg" alt="Loa" class="icon-loa">
+        </button>
+        <button class="audio" data-answer="shaker" data-sound="/Game 3/Unit/Unit8/Sound/shaker.mp3">
+          <img src="/IMG/speaker.svg" alt="Loa" class="icon-loa">
+        </button>
+        <button class="audio" data-answer="tambourine" data-sound="/Game 3/Unit/Unit8/Sound/tambourine.mp3">
+          <img src="/IMG/speaker.svg" alt="Loa" class="icon-loa">
+        </button>
+        <button class="audio" data-answer="flute" data-sound="/Game 3/Unit/Unit8/Sound/flute.mp3">
+          <img src="/IMG/speaker.svg" alt="Loa" class="icon-loa">
+        </button>
+    </div>
+
+    <div class="characters">
+      <div class="character" data-name="drums">
+        <img src="/Game 3/Unit/Unit8/img unit/drums.jpg" alt="drums" />
+      </div>
+      <div class="character" data-name="flute">
+        <img src="/Game 3/Unit/Unit8/img unit/flute.jpg" alt="flute" />
+      </div>
+      <div class="character" data-name="guitar">
+        <img src="/Game 3/Unit/Unit8/img unit/guitar.jpg" alt="guitar" />
+      </div>
+      <div class="character" data-name="piano">
+        <img src="/Game 3/Unit/Unit8/img unit/piano.jpg" alt="piano" />
+      </div>
+      <div class="character" data-name="shaker">
+        <img src="/Game 3/Unit/Unit8/img unit/shaker.jpg" alt="shaker" />
+       </div>
+      <div class="character" data-name="tambourine">
+        <img src="/Game 3/Unit/Unit8/img unit/tambourine.jpg" alt="tambourine" />
+      </div>
+    </div>
+    <div class="restart-container">
+        <button id="restart-button">🔁 Chơi lại</button>
+    </div>
+    <img src="/IMG/image 60.png" alt="Nhân vật" class="corner-image">
+  </div>
+</main>
+<script>
+const answers = [ "guitar", "piano", "drums", "shaker", "tambourine", "flute" ];
+let currentAudioIndex = null;
+
+document.querySelectorAll('.audio').forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    currentAudioIndex = index;
+    new Audio(btn.dataset.sound).play();
+  });
+});
+
+document.querySelectorAll('.character').forEach(character => {
+  character.addEventListener('click', () => {
+    if (currentAudioIndex === null) return;
+
+    // Nếu đã chọn đúng rồi thì bỏ qua
+    if (character.classList.contains('correct')) return;
+
+    // Xóa trạng thái sai (nếu có)
+    character.classList.remove('wrong');
+    const selected = character.dataset.name.toLowerCase();
+    const correct = answers[currentAudioIndex].toLowerCase();
+
+    if (selected === correct) {
+      character.classList.add('correct');
+
+      // ✅ Kiểm tra nếu đã đúng hết 6 hình
+      const correctCount = document.querySelectorAll('.character.correct').length;
+      if (correctCount === 6) {
+        showPopup();
+      }
+    } else {
+      character.classList.add('wrong');
+    }
+  });
+});
+
+// Nút chơi lại
+document.getElementById('restart-button').addEventListener('click', () => {
+  document.querySelectorAll('.character').forEach(el => {
+    el.classList.remove('correct', 'wrong');
+  });
+  currentAudioIndex = null;
+  closePopup();
+});
+
+// Hiện popup
+function showPopup() {
+  document.getElementById("success-popup").classList.remove("hidden");
+}
+
+// Đóng popup
+function closePopup() {
+  document.getElementById("success-popup").classList.add("hidden");
+}
+</script>
+<div id="success-popup" class="popup hidden">
+  <div class="popup-content">
+    <h2>🎉 Chúc mừng!</h2>
+    <p>Bạn đã làm đúng hết rồi!</p>
+    <button onclick="closePopup()">Đóng</button>
+  </div>
+</div>
+
+</body>
+</html>
