@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Tải code từ Repo về máy ảo
-    - uses: actions/checkout@v4
+    # 1. Tải code từ GitHub về máy ảo
+    - name: Checkout code
+      uses: actions/checkout@v4
 
     # 2. Thiết lập môi trường PHP
     - name: Setup PHP
@@ -22,34 +23,34 @@ jobs:
         extensions: mbstring, dom, curl, libxml, mysql, zip, bcmath, gd
         tools: composer:v2
 
-    # 3. Cấu hình để vượt qua các cảnh báo bảo mật (Audit) của năm 2026
-    # Bước này cực kỳ quan trọng để tránh lỗi PKSA-xxx
-    - name: Configure Composer Audit
-      run: composer config audit.block-insecure false
+    # 3. Tạo file .env từ file .env.example bạn vừa tạo
+    # Bước này giúp tránh lỗi "Failed to open stream: No such file or directory"
+    - name: Copy .env file
+      run: cp .env.example .env
 
-    # 4. Cài đặt các thư viện từ file composer.lock
-    # Dùng lệnh 'install' thay vì 'update' để đảm bảo tính nhất quán
+    # 4. Cài đặt các thư viện (Dependencies)
+    # Bao gồm lệnh tắt kiểm tra bảo mật để tránh lỗi PKSA năm 2026
     - name: Install Dependencies
       run: |
         composer config audit.block-insecure false
         composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
 
-    # 5. Khởi tạo Application Key
+    # 5. Khởi tạo Application Key cho môi trường Test
     - name: Generate key
       run: php artisan key:generate
 
-    # 6. Cấp quyền cho thư mục storage và cache
+    # 6. Cấp quyền cho thư mục hệ thống của Laravel
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
-    # 7. Tạo database giả lập (SQLite) để chạy test
+    # 7. Tạo Database giả lập (SQLite) để chạy test không cần MySQL thật
     - name: Create Database
       run: |
         mkdir -p database
         touch database/database.sqlite
 
-    # 8. Chạy Unit Test / Feature Test
-    - name: Execute tests
+    # 8. Chạy các bài Test của dự án
+    - name: Execute tests (Unit and Feature tests)
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
