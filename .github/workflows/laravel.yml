@@ -42,12 +42,15 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
-    # 7. Tạo Database và Chạy Migration để tạo bảng
+    # 7. Tạo Database và Chạy Migration
     - name: Create Database & Migrate
+      env:
+        DB_CONNECTION: sqlite
+        DB_DATABASE: database/database.sqlite
       run: |
         mkdir -p database
         touch database/database.sqlite
-        php artisan migrate --force  # THÊM DÒNG NÀY để tạo bảng 'lessons' và các bảng khác
+        php artisan migrate --force
 
     # 8. Chạy Unit Test
     - name: Execute tests
