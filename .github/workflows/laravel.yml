@@ -29,12 +29,14 @@ jobs:
 
     # 4. Chuẩn bị file môi trường
     - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      run: cp .env.example .env
 
     # 5. Cài đặt các thư viện từ file composer.lock
     # Dùng lệnh 'install' thay vì 'update' để đảm bảo tính nhất quán
     - name: Install Dependencies
-      run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
+      run: |
+        composer config audit.block-insecure false
+        composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
 
     # 6. Khởi tạo Application Key
     - name: Generate key
