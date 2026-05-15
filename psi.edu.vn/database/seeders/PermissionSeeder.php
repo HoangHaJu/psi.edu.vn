@@ -33,7 +33,7 @@ class PermissionSeeder extends Seeder
             'title' => 'Super Admin',
             'name' => 'superAdmin',
             'guard_name' => 'admin',
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('roles')->insert([
@@ -41,7 +41,7 @@ class PermissionSeeder extends Seeder
             'title' => 'Học viên',
             'name' => 'student',
             'guard_name' => 'admin',
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('roles')->insert([
@@ -49,7 +49,7 @@ class PermissionSeeder extends Seeder
             'title' => 'Giáo viên',
             'name' => 'teacher',
             'guard_name' => 'admin',
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -58,7 +58,7 @@ class PermissionSeeder extends Seeder
             'name' => 'QL Khoá học',
             'description' => '<p>QL các thông tin khoá học của hệ thống</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -67,7 +67,7 @@ class PermissionSeeder extends Seeder
             'name' => 'QL Danh mục',
             'description' => '<p>QL danh mục</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -76,7 +76,7 @@ class PermissionSeeder extends Seeder
             'name' => 'QL Thông báo',
             'description' => '<p>QL Thông báo</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('modules')->insert([
@@ -84,7 +84,7 @@ class PermissionSeeder extends Seeder
             'name' => 'QL Vai trò',
             'description' => '<p>QL Vai trò</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -93,7 +93,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewRole',
             'guard_name' => 'admin',
             'module_id' => 4,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -103,7 +103,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createRole',
             'guard_name' => 'admin',
             'module_id' => 4,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -113,7 +113,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateRole',
             'guard_name' => 'admin',
             'module_id' => 4,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -123,7 +123,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteRole',
             'guard_name' => 'admin',
             'module_id' => 4,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -139,7 +139,7 @@ class PermissionSeeder extends Seeder
             'name' => 'QL Admin',
             'description' => '<p>QL Người dùng hệ thống</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('modules')->insert([
@@ -147,7 +147,7 @@ class PermissionSeeder extends Seeder
             'name' => 'QL Buổi học',
             'description' => '<p>QL các Buổi học trong hệ thống</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('modules')->insert([
@@ -155,7 +155,7 @@ class PermissionSeeder extends Seeder
             'name' => 'Đăng ký khoá học',
             'description' => '<p>Đăng ký khoá học</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('modules')->insert([
@@ -163,7 +163,7 @@ class PermissionSeeder extends Seeder
             'name' => 'QL đánh giá',
             'description' => '<p>QL Đánh giá</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('modules')->insert([
@@ -171,7 +171,7 @@ class PermissionSeeder extends Seeder
             'name' => 'QL Gói vé',
             'description' => '<p>QL Gói vé</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('modules')->insert([
@@ -179,7 +179,7 @@ class PermissionSeeder extends Seeder
             'name' => 'Đăng ký buổi học',
             'description' => '<p>QL đăng ký buổi học</p>',
             'status' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -206,7 +206,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewCourse',
             'guard_name' => 'admin',
             'module_id' => 1,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -215,7 +215,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createCourse',
             'guard_name' => 'admin',
             'module_id' => 1,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -224,7 +224,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateCourse',
             'guard_name' => 'admin',
             'module_id' => 1,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -233,7 +233,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteCourse',
             'guard_name' => 'admin',
             'module_id' => 1,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -242,7 +242,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createCategory',
             'guard_name' => 'admin',
             'module_id' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -250,7 +250,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateCategory',
             'guard_name' => 'admin',
             'module_id' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -258,7 +258,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteCategory',
             'guard_name' => 'admin',
             'module_id' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -266,7 +266,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewCategory',
             'guard_name' => 'admin',
             'module_id' => 2,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -274,7 +274,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createNotification',
             'guard_name' => 'admin',
             'module_id' => 3,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -282,7 +282,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateNotification',
             'guard_name' => 'admin',
             'module_id' => 3,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -290,7 +290,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteNotification',
             'guard_name' => 'admin',
             'module_id' => 3,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -298,7 +298,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewNotification',
             'guard_name' => 'admin',
             'module_id' => 3,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -307,7 +307,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewAdmin',
             'guard_name' => 'admin',
             'module_id' => 5,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -316,7 +316,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createAdmin',
             'guard_name' => 'admin',
             'module_id' => 5,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -325,7 +325,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateAdmin',
             'guard_name' => 'admin',
             'module_id' => 5,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -334,7 +334,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteAdmin',
             'guard_name' => 'admin',
             'module_id' => 5,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -342,7 +342,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewLesson',
             'guard_name' => 'admin',
             'module_id' => 6,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -351,7 +351,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createLesson',
             'guard_name' => 'admin',
             'module_id' => 6,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -360,7 +360,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateLesson',
             'guard_name' => 'admin',
             'module_id' => 6,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -369,7 +369,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteLesson',
             'guard_name' => 'admin',
             'module_id' => 6,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -377,7 +377,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewBooking',
             'guard_name' => 'admin',
             'module_id' => 7,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -385,7 +385,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createBooking',
             'guard_name' => 'admin',
             'module_id' => 7,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -393,7 +393,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateBooking',
             'guard_name' => 'admin',
             'module_id' => 7,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -401,7 +401,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteBooking',
             'guard_name' => 'admin',
             'module_id' => 7,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -409,7 +409,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewReview',
             'guard_name' => 'admin',
             'module_id' => 8,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -417,7 +417,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createReview',
             'guard_name' => 'admin',
             'module_id' => 8,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -425,7 +425,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewTicket',
             'guard_name' => 'admin',
             'module_id' => 9,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -433,7 +433,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createTicket',
             'guard_name' => 'admin',
             'module_id' => 9,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -441,7 +441,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateTicket',
             'guard_name' => 'admin',
             'module_id' => 9,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -449,7 +449,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteTicket',
             'guard_name' => 'admin',
             'module_id' => 9,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -457,7 +457,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewTransaction',
             'guard_name' => 'admin',
             'module_id' => 10,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -465,7 +465,7 @@ class PermissionSeeder extends Seeder
             'name' => 'createTransaction',
             'guard_name' => 'admin',
             'module_id' => 10,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -473,7 +473,7 @@ class PermissionSeeder extends Seeder
             'name' => 'updateTransaction',
             'guard_name' => 'admin',
             'module_id' => 10,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -481,7 +481,7 @@ class PermissionSeeder extends Seeder
             'name' => 'deleteTransaction',
             'guard_name' => 'admin',
             'module_id' => 10,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -489,7 +489,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewTicketList',
             'guard_name' => 'admin',
             'module_id' => null,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -497,7 +497,7 @@ class PermissionSeeder extends Seeder
             'name' => 'settingGeneral',
             'guard_name' => 'admin',
             'module_id' => null,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -505,7 +505,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewSchedule',
             'guard_name' => 'admin',
             'module_id' => null,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('permissions')->insert([
@@ -513,7 +513,7 @@ class PermissionSeeder extends Seeder
             'name' => 'viewDashboard',
             'guard_name' => 'admin',
             'module_id' => null,
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
     }

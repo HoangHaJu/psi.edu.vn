@@ -49,7 +49,7 @@ return new class extends Migration
             'is_active' => '1',
             'avatar' => config('custom.images.avatarUser'),
             'password' => bcrypt('1'),
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -60,7 +60,7 @@ return new class extends Migration
             'is_active' => '1',
             'avatar' => config('custom.images.avatarUser'),
             'password' => bcrypt('1'),
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
 
@@ -71,7 +71,7 @@ return new class extends Migration
             'is_active' => '1',
             'avatar' => config('custom.images.avatarUser'),
             'password' => bcrypt('1'),
-            'created_at' => now(),,
+            'created_at' => now(),
             'updated_at' => now(),
         ]);
     }
