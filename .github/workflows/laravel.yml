@@ -1,21 +1,44 @@
-Run composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
-No composer.lock file present. Updating dependencies to latest instead of installing from lock file. See https://getcomposer.org/install for more information.
-Loading composer repositories with package information
-Updating dependencies
-Your requirements could not be resolved to an installable set of packages.
+name: Laravel
 
-Error: Your requirements could not be resolved to an installable set of packages.
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-  Problem 1
-    - Root composer.json requires laravel/framework ^9.19, found laravel/framework[v9.19.0, ..., v9.52.21] but these were not loaded, because they are affected by security advisories ("PKSA-8qx3-n5y5-vvnd", "PKSA-w7xr-vk7n-rstm"). Go to https://packagist.org/security-advisories/ to find advisory details. To ignore the advisories, add them to the audit "ignore" config. To turn the feature off entirely, you can set "block-insecure" to false in your "audit" config.
-  Problem 2
-    - Root composer.json requires ckfinder/ckfinder-laravel-package ^4.0 -> satisfiable by ckfinder/ckfinder-laravel-package[v4.0.0, v4.0.1, v4.0.2].
-    - ckfinder/ckfinder-laravel-package v4.0.0 requires laravel/framework ^9.0 -> found laravel/framework[v9.0.0, ..., v9.52.21] but these were not loaded, because they are affected by security advisories ("PKSA-8qx3-n5y5-vvnd", "PKSA-w7xr-vk7n-rstm"). Go to https://packagist.org/security-advisories/ to find advisory details. To ignore the advisories, add them to the audit "ignore" config. To turn the feature off entirely, you can set "block-insecure" to false in your "audit" config.
-    - ckfinder/ckfinder-laravel-package[v4.0.1, ..., v4.0.2] require laravel/framework ^9.0|^10.0 -> found laravel/framework[v9.0.0, ..., v9.52.21, v10.0.0, ..., 10.50.2] but these were not loaded, because they are affected by security advisories ("PKSA-8qx3-n5y5-vvnd", "PKSA-w7xr-vk7n-rstm"). Go to https://packagist.org/security-advisories/ to find advisory details. To ignore the advisories, add them to the audit "ignore" config. To turn the feature off entirely, you can set "block-insecure" to false in your "audit" config.
+jobs:
+  laravel-tests:
 
-  Problem 1
-    - Root composer.json requires laravel/framework ^9.19, found laravel/framework[v9.19.0, ..., v9.52.21] but these were not loaded, because they are affected by security advisories ("PKSA-8qx3-n5y5-vvnd", "PKSA-w7xr-vk7n-rstm"). Go to https://packagist.org/security-advisories/ to find advisory details. To ignore the advisories, add them to the audit "ignore" config. To turn the feature off entirely, you can set "block-insecure" to false in your "audit" config.
-  Problem 2
-    - Root composer.json requires ckfinder/ckfinder-laravel-package ^4.0 -> satisfiable by ckfinder/ckfinder-laravel-package[v4.0.0, v4.0.1, v4.0.2].
-    - ckfinder/ckfinder-laravel-package v4.0.0 requires laravel/framework ^9.0 -> found laravel/framework[v9.0.0, ..., v9.52.21] but these were not loaded, because they are affected by security advisories ("PKSA-8qx3-n5y5-vvnd", "PKSA-w7xr-vk7n-rstm"). Go to https://packagist.org/security-advisories/ to find advisory details. To ignore the advisories, add them to the audit "ignore" config. To turn the feature off entirely, you can set "block-insecure" to false in your "audit" config.
-    - ckfinder/ckfinder-laravel-package[v4.0.1, ..., v4.0.2] require laravel/framework ^9.0|^10.0 -> found laravel/framework[v9.0.0, ..., v9.52.21, v10.0.0, ..., 10.50.2] but these were not loaded, because they are affected by security advisories ("PKSA-8qx3-n5y5-vvnd", "PKSA-w7xr-vk7n-rstm"). Go to https://packagist.org/security-advisories/ to find advisory details. To ignore the advisories, add them to the audit "ignore" config. To turn the feature off entirely, you can set "block-insecure" to false in your "audit" config.
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2' # Đảm bảo dùng bản PHP mới nhất
+        extensions: mbstring, dom, curl, libxml, mysql, zip, bcmath # Thêm các ext phổ biến
+        tools: composer:v2
+    - name: Install Dependencies
+      # Thêm cờ --ignore-platform-reqs để bỏ qua các yêu cầu về extension máy chủ
+      run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
+      with:
+        php-version: '8.0'
+    - uses: actions/checkout@v4
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: Generate key
+      run: php artisan key:generate
+    - name: Directory Permissions
+      run: chmod -R 777 storage bootstrap/cache
+    - name: Create Database
+      run: |
+        mkdir -p database
+        touch database/database.sqlite
+    - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
+      env:
+        DB_CONNECTION: sqlite
+        DB_DATABASE: database/database.sqlite
+      run: php artisan test
